@@ -163,3 +163,8 @@ The node file system package ([fs](http://nodejs.org/api/fs.html)) package has r
 
 - [readFileSync](http://nodejs.org/api/fs.html#fs_fs_readfilesync_filename_options)
 - [writeFile](http://nodejs.org/api/fs.html#fs_fs_writefile_filename_data_options_callback)
+- [SplitSlice][splitslice]
+- [Split][split]
+
+[splitslice]: https://github.com/charliecalvert/Prog272-Assignments/blob/master/Week02-SplitSlice/README.md
+
