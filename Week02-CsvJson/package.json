@@ -1,0 +1,28 @@
+{
+  "name": "GetNumbers",
+  "version": "1.0.0",
+  "description": "Downloaded example",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jasmine-node --color --autotest --watch Source/*.js --verbose Test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charliecalvert/JsObjects.git"
+  },
+  "author": "CharlieCalvert",
+  "license": "MIT",
+  "homepage": "https://elvenware.com/charlie",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-compress": "~0.13.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-jasmine-node": "^0.2.1"
+  },
+  "dependencies": {}
+}

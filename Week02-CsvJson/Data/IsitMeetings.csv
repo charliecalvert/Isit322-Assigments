@@ -1,0 +1,11 @@
+meeting_id, day, time, town, meeting_name, location, street_address, city, state, zip, subjects
+"1","Sunday","06:00:00"," Bellevue","Function Kings","City Hall","12 NE 83 St","Bellevue","WA","98005","F#"
+"2","Sunday","07:00:00"," Seattle","Wayward Commas","Rage Against the Machine","15 NE 58 St","Seattle","WA","98005","HTML; CSS; JavaScript"
+"3","Monday","07:00:00","Bellevue","Syntax Ships","Jump Building","11 168 Ave NE","Bellevue","WA","98007","CSS"
+"4","Tuesday","07:00:00","Seattle","Backend Bambinos","Mickeys","121 143 Ave NE","Seattle","WA","98007","Python"
+"5","Wednesday","08:30:00","Redmond","Freedom Coders","Empire Way","330 18 Ave SE","Redmond","WA","98052","C#"
+"6","Thursday","09:30:00","Bellevue","Hacker Paradise","Lonnies Bar and Grill","122 SE 92 St","Bellevue","WA","98005","HTML; CSS; JavaScript"
+"7","Thursday","12:30:00","Bellevue","Web Kings","East Hall","12 NE 60 St","Bellevue","WA","98005","JavaScript"
+"8","Friday","13:30:00","Monroe","Night Hackers","Winter Clubhouse","16 NE 171 St","Monroe","WA","98005","HTML; CSS"
+"9","Friday","14:00:00","Kirkland","Infinite Loop","Tall Building","38 NE 93 St","Kirkland","WA","98005","JavaScript"
+"10","Saturday","17:30:00","Issaquah","Callbacks","Real Estates","12302 NE 27 St","Issaquah","WA","98005","Java; C#"

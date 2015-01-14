@@ -1,0 +1,3 @@
+#! /bin/bash
+
+jasmine-node --color --autotest --watch Source/*.js --verbose Test/
