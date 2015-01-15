@@ -144,6 +144,10 @@ Use the tests as a guide to help you:
 
 ## Things you need to know
 
+Run the tests:
+
+	./RunJasmineNode
+	
 The only method you need to call to convert the CSV to JSON is **ConvertToJson.run**. The other methods are made
 public so you can call them in your tests. We will consider ways to hide these methods later in the course. But
 I don't really need to tell you this, because the tests should explain exactly what each method does.
