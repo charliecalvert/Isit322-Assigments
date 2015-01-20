@@ -1,6 +1,6 @@
 # Objects Basics
 
-Learn about constructing objects in JavaScript.
+Learn the basic facts about constructing objects in JavaScript.
 
 This project shows how to run mocha for unit testing and jshint
 for checking the syntax of your code.
