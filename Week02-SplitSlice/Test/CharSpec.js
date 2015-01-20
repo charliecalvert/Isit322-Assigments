@@ -37,7 +37,7 @@ describe('Test Characters', function () {
         });
 
         it('proves the function returns a hyphen', function () {
-            expect(chars.getHyphen()).to.equal('"');
+            expect(chars.getHyphen()).to.equal('-');
         });
 
     });
