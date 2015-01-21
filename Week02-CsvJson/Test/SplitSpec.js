@@ -1,10 +1,13 @@
+var chai = require('chai');
+var expect = chai.expect;
+
 var pc = require('../Source/ParseCsv.js');
 
 describe("CSV Tests Warm-up Exercises", function () {
     'use strict';
 
     it("proves that true is true", function () {
-        expect(true).toBe(true);
+        expect(true).to.equal(true);
     });
 
     it("tests if we can remove quotes", function () {
@@ -16,18 +19,18 @@ describe("CSV Tests Warm-up Exercises", function () {
             return pc.removeFirstLastChar(word, '"');
         });
 
-        expect(words[0]).toBe('Tom');
+        expect(words[0]).to.equal('Tom');
     });
 
     it('proves parscsv convert returns json', function () {
         var convertToJson = new pc.ConvertToJson();
         var json = convertToJson.run('Data/IsitMeetings.csv', 'csv');
-        expect(typeof json).toBe('object');
+        expect(typeof json).to.equal('object');
     });
 
     it("proves json first record contains Sunday", function() {
         var convertToJson = new pc.ConvertToJson();
         var json = convertToJson.run('Data/IsitMeetings.csv', 'csv');
-        expect(json[0].day).toBe('Sunday');
+        expect(json[0].day).to.equal('Sunday');
     });
 });

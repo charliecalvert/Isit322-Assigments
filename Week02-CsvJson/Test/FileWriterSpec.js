@@ -2,6 +2,9 @@
  * Created by charliecalvert on 1/13/15.
  */
 
+var chai = require('chai');
+var expect = chai.expect;
+
 var fileWriters = require('../Source/FileWriters.js');
 
 describe("File Writer Tests shows that FileWriters.js exports two methods", function () {
@@ -20,18 +23,18 @@ describe("File Writer Tests shows that FileWriters.js exports two methods", func
     });
 
     it("proves that true is true", function () {
-        expect(true).toBe(true);
+        expect(true).to.equal(true);
     });
 
     it("proves that ParseCsv.js exports two methods", function() {
-        expect(methods.length).toBe(2);
+        expect(methods.length).to.equal(2);
     });
 
     it('proves that ParseCvs contains a method called writeHtml', function() {
-        expect(methods.indexOf('writeHtml')).not.toBe(-1);
+        expect(methods.indexOf('writeHtml')).not.to.equal(-1);
     });
 
     it('proves that ParseCvs contains a method called writeJson', function() {
-        expect(methods.indexOf('writeJson')).not.toBe(-1);
+        expect(methods.indexOf('writeJson')).not.to.equal(-1);
     });
 });
