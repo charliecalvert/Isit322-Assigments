@@ -5,5 +5,6 @@ node_modules
 result.xml
 .c9
 Thumbs.db
+platforms
 Foo.*
 foo.*
