@@ -1,10 +1,11 @@
 node_modules
+bower_components
+platforms
 *.zip
 .metadata
 .idea
 result.xml
 .c9
 Thumbs.db
-platforms
 Foo.*
 foo.*
