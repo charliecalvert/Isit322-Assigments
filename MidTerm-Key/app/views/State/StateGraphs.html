@@ -1,0 +1,16 @@
+<div>
+  <p>{{url}}</p>
+</div>
+
+<div>
+  <button ng-click="getTopFifteenStates()">Graph Top Fifteen States</button>
+  <button ng-click="getTopFiveStates()">Graph Top Five States</button>
+  <button ng-click="getBottomTenStates()">Graph Bottom Ten States</button>
+</div>
+
+<select ng-model="chartSelect.value" ng-options="v for v in chartSelect.values" ng-change="chartTypeUpdate()">
+</select>
+
+<div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+
+<pre id="debug"></pre>

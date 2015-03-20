@@ -1,0 +1,13 @@
+http://api.census.gov/data/2012/ewks?get=NAICS2012&for=us:*
+
+http://api.census.gov/data/2012/ewks?get=EMP,OPTAX&for=state:*&NAICS2012=54&key=f2be9166735a2e23ac561c42ebcec7dfecaafc44
+
+http://api.census.gov/data/2012/ewks?get=EMP,OPTAX,PAYANN&for=state:*&NAICS2012=54&key=f2be9166735a2e23ac561c42ebcec7dfecaafc44
+
+http://api.census.gov/data/2012/ewks?get=ST&for=state:*&NAICS2012=54&key=f2be9166735a2e23ac561c42ebcec7dfecaafc44
+
+
+http://api.census.gov/data/2012/ewks?get=NAICS2012&for=state:01&key=f2be9166735a2e23ac561c42ebcec7dfecaafc44
+
+
+http://api.census.gov/data/2010/sf1?key=f2be9166735a2e23ac561c42ebcec7dfecaafc44&get=P0010001&for=zip+code+tabulation+area:98007&in=state:53

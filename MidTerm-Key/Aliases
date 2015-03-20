@@ -1,0 +1,5 @@
+#! /bin/bash
+
+alias runall="npm install && bower install && grunt serve"
+alias testall="npm install && bower install && grunt test"
+

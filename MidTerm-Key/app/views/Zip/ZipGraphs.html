@@ -1,0 +1,29 @@
+<p>Number of Zip Codes to Graph</p>
+<input type="number" ng-model="numberToGraph" size="4">
+
+<input type="button" class="btn btn-primary" value="Get Top Zip Codes in WA" ng-click="getZips('top')">
+<input type="button" class="btn btn-primary" value="Get Bottom Zip Codes in WA" ng-click="getZips('bottom')">
+
+<select ng-model="chartSelect.value"
+        ng-options="v for v in chartSelect.values"
+        ng-change="chartTypeUpdate()">
+</select>
+
+
+<div ng-repeat="name in allZips">
+  <strong>query data:</strong> {{ name }}<br>
+</div>
+
+<hr />
+
+
+<div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+
+
+<hr />
+
+
+<button ng-click="saveStates()">Save Data for All States</button>
+<button ng-click="getLocalStates()">Load Data for All States</button>
+<ul id="statesData"></ul>
+

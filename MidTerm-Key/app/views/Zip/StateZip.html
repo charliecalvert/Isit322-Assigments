@@ -1,0 +1,37 @@
+<p>Enter a zip code and I will give you the population</p>
+<input type="text" ng-model="zipCode">
+<div>
+  <p ng-model="population"></p>
+  <!-- input type="button" class="btn btn-primary" value="Get Population by Zip Code" ng-click="getZipPopulation()" -->
+  <input type="button" class="btn btn-primary" value="Get Zip Data" ng-click="getZipData()">
+</div>
+
+<hr>
+
+<div>
+  <p>The population of {{stateName}} is {{population | number }}.</p>
+  <hr>
+  <div class="alert alert-success" role="alert">
+    <div ng-repeat="name in response1">
+      <strong>query data:</strong> {{ name }}<br>
+    </div>
+
+    <div ng-repeat="name in response2">
+      <strong>zip data:</strong> {{ name }}<br>
+    </div>
+  </div>
+</div>
+
+<div>
+  {{response}}
+  <hr />
+  <div class="alert alert-success" role="alert">
+    <pre>The raw data: {{data}} </pre>
+  </div>
+  <div class="alert alert-danger" role="alert">
+    <pre>{{debug}}</pre>
+  </div>
+
+  <hr />
+
+</div>

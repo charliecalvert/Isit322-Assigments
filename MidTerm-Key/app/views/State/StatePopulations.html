@@ -1,0 +1,36 @@
+<div>
+    <!-- button ng-click="getSelectedState()">Get Selected State</button -->
+    <p>The population of {{stateName}} is {{population | number }}.</p>
+
+    <div ng-repeat="name in statePopulations.response1">
+        <strong>query data:</strong> {{ name }}<br>
+    </div>
+
+    <div ng-repeat="name in statePopulations.response2">
+        <strong>state data:</strong> {{ name }}<br>
+    </div>
+</div>
+
+
+<ul id="details"></ul>
+
+<div>
+    <select id="populationPick" ng-model='stateSelect.value' ng-change="getSelectedState()"
+            ng-options="value.name for (name, value) in stateSelect.values track by value.value">
+    </select>
+</div>
+
+<div>
+    <select id="statePick" ng-model='states1.value' ng-change="getSelectedState()"
+            ng-options="value.name for (name, value) in states1.values track by value.value">
+    </select>
+</div>
+
+<hr/>
+
+<div>
+    <p>{{bar}}</p>
+    <p>{{url}}</p>
+    <p>{{statePopulations.bar}}</p>
+</div>
+
