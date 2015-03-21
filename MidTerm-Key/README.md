@@ -39,6 +39,11 @@ will be skipped.
 
 ## Notable
 
+The code in Scripts/Zip is probably better overall than the code in the 
+states folder. It was just coincidence that I tended to teach to that
+section more than the other. The code we went over in class got more
+attention than the code we did not focus on.
+
 Probably the most interesting code is the reusable factory that runs 
 the queries against the census. This code has a **promise** in it. 
 
@@ -49,8 +54,8 @@ run and if we so, do we need to re-run it:
 
 The logic should go like this: 
 
-- Did we just run a query for the zip code? If so, return the previous results. 
 - Did we not run any queries yet? If not, then run a query. 
+- Did we just run a query for this particular zip code? If so, return the previous results. 
 - Did we run a query previously, but it was not for the correct zip code? If so, run a new query.
 
 For some reason, I think this test does not always work. I'll try
