@@ -33,9 +33,6 @@ angular.module("statesApp", [
             .when("/stateZip", {
                 templateUrl: "views/Zip/StateZip.html",
                 controller: "ZipController"
-                /* resolve: {
-                 zipPopulation: zipController.zipPopulation
-                 } */
             })
             .when("/allZips", {
                 templateUrl: "views/Zip/AllZips.html",
@@ -48,7 +45,8 @@ angular.module("statesApp", [
             })
             .when("/stateGraphs", {
                 templateUrl: "views/State/StateGraphs.html",
-                controller: "StateGraphController"
+                controller: "StateGraphController",
+                controllerAs: "stateGraphController"
             })
             .when("/zipGraphs", {
                 templateUrl: "views/Zip/ZipGraphs.html",

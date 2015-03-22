@@ -6,40 +6,43 @@
 var mod = angular.module("statesApp");
 
 
-mod.controller("StateGraphController", function ($scope, $http, getUrl, chartFactory) {
+mod.controller("StateGraphController", function ($http, getUrl, chartFactory) {
 
     'use strict';
 
+    var stateGraphController = this;
+
     var chartTitle = 'The relative population of the top five states';
 
-    $scope.stateSliceStart = 0;
-    $scope.stateSliceStop = 10;
-    $scope.topStates = [];
-    $scope.chartSelect = chartFactory.chartSelect;
-    $scope.chartTypeUpdate = chartFactory.chartTypeUpdate;
+
+    stateGraphController.stateSliceStart = 0;
+    stateGraphController.stateSliceStop = 10;
+    stateGraphController.topStates = [];
+    stateGraphController.chartSelect = chartFactory.chartSelect;
+    stateGraphController.chartTypeUpdate = chartFactory.chartTypeUpdate;
 
 
 
     function runChart() {
-        $scope.chartObject = chartFactory.getChart($scope.topStates, chartTitle);
+        stateGraphController.chartObject = chartFactory.getChart(stateGraphController.topStates, chartTitle);
     }
 
     function successAll(response) {
         response.splice(0, 1);
 
-        $scope.allStates = response;
+        stateGraphController.allStates = response;
 
         response.sort(function (a, b) {
             return b[0] - a[0];
         });
 
-        var top5 = response.slice($scope.stateSliceStart, $scope.stateSliceStop);
+        var top5 = response.slice(stateGraphController.stateSliceStart, stateGraphController.stateSliceStop);
         // var top5 = response.splice(45, response.length);
 
-        $scope.topStates = [];
+        stateGraphController.topStates = [];
 
         for (var i = 0; i < top5.length; i++) {
-            $scope.topStates.push({
+            stateGraphController.topStates.push({
                 c: [
                     {v: top5[i][1]},
                     {v: parseInt(top5[i][0])}
@@ -50,46 +53,31 @@ mod.controller("StateGraphController", function ($scope, $http, getUrl, chartFac
     }
 
     function errorFunc(responseData, textStatus, errorThrown) {
-        $($scope.selectors[0]).html("GET failed." + JSON.stringify(responseData, null, 4) + textStatus + errorThrown);
+        $(stateGraphController.selectors[0]).html("GET failed." + JSON.stringify(responseData, null, 4) + textStatus + errorThrown);
     }
 
 
     var getAllStatesWorker = function (callback) {
         // var queryUrl = url;
-        $scope.url = getUrl(true);
+        stateGraphController.url = getUrl(true);
 
         jQuery.support.cors = true;
 
         // Make async call to Census API service
-        var response = $http.get($scope.url);
+        var response = $http.get(stateGraphController.url);
         response.success(callback);
         response.error(errorFunc);
     };
 
-    $scope.getAllStates = function () {
+    stateGraphController.getAllStates = function () {
         chartTitle = 'All States';
         getAllStatesWorker(successAll);
     };
 
-    $scope.getTopFifteenStates = function () {
-        chartTitle = 'Top Fifteen States';
-        $scope.stateSliceStart = 0;
-        $scope.stateSliceStop = 15;
-
-        getAllStatesWorker(successAll);
-    };
-
-    $scope.getTopFiveStates = function () {
-        chartTitle = 'Top Five States';
-        $scope.stateSliceStart = 0;
-        $scope.stateSliceStop = 5;
-        getAllStatesWorker(successAll);
-    };
-
-    $scope.getBottomTenStates = function () {
-        chartTitle = 'Bottom Ten States';
-        $scope.stateSliceStart = 42;
-        $scope.stateSliceStop = 52;
+    stateGraphController.getStatesSlice = function(title, start, stop) {
+        chartTitle = title;
+        stateGraphController.stateSliceStart = start;
+        stateGraphController.stateSliceStop = stop;
         getAllStatesWorker(successAll);
     };
 
@@ -101,7 +89,7 @@ mod.controller("StateGraphController", function ($scope, $http, getUrl, chartFac
         }
     }
 
-    $scope.saveStates = function () {
+    stateGraphController.saveStates = function () {
         getAllStatesWorker(function (data) {
             if (supportsHtml5Storage()) {
                 var stringData = JSON.stringify(data);
@@ -112,7 +100,7 @@ mod.controller("StateGraphController", function ($scope, $http, getUrl, chartFac
         });
     };
 
-    $scope.getLocalStates = function () {
+    stateGraphController.getLocalStates = function () {
         if (supportsHtml5Storage()) {
             var data = localStorage['statesData'];
             console.log('from local storage: ', data);

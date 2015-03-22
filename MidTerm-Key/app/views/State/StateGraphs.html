@@ -3,14 +3,14 @@
 </div>
 
 <div>
-  <button ng-click="getTopFifteenStates()">Graph Top Fifteen States</button>
-  <button ng-click="getTopFiveStates()">Graph Top Five States</button>
-  <button ng-click="getBottomTenStates()">Graph Bottom Ten States</button>
+  <button ng-click="stateGraphController.getStatesSlice('Top Fifteen States', 0, 15)">Graph Top Fifteen States</button>
+  <button ng-click="stateGraphController.getStatesSlice('Top Five States', 0, 5)">Graph Top Five States</button>
+  <button ng-click="stateGraphController.getStatesSlice('Bottom Ten States', 42, 52)">Graph Bottom Ten States</button>
 </div>
 
-<select ng-model="chartSelect.value" ng-options="v for v in chartSelect.values" ng-change="chartTypeUpdate()">
+<select ng-model="stateGraphController.chartSelect.value" ng-options="v for v in stateGraphController.chartSelect.values" ng-change="stateGraphController.chartTypeUpdate()">
 </select>
 
-<div google-chart chart="chartObject" style="height:600px; width:100%;"></div>
+<div google-chart chart="stateGraphController.chartObject" style="height:600px; width:100%;"></div>
 
-<pre id="debug"></pre>
+<pre id="stateGraphController.debug"></pre>
